@@ -14,7 +14,7 @@
    - Se ejecuta normal la aplicación y debe crear las tablas con sus relaciones en la instancia
 7. Segundo, Se crea el paquete de "service", en donde creo un paquete para cada entidad y después el Service y la interface.
    - En la interface colocamos los métodos que vamos a usar, para obtener info de los productos: Añadir producto, listarlos, etc.
-   - Al colocar en la clase de service, que se va a implementar la interface, el IDE le coloca el @override a todo y declara los métodos automáticamente.
+   - Al colocar en la clase de service, que se va a implementar la interface, el IDE le coloca el @Override a todo y declara los métodos automáticamente.
    - En el Service, podemos llamar al Repository y desde ahi mismo crear el nuevo paquete y clase (Create Spring data repository), este sería el Tercer paso.
    - Se editan las clases en el service, recordar que se usa el repository para no llamar el modelo directamente y como esta extiende de JpaRepository, ya tiene métodos determinados.
    - Se pueden crear excepciones ahi mismo, como "ProductNotFoundException", para quedar personalizadas. 
@@ -22,7 +22,7 @@
    - Podemos llamar al repository en el service.
 9. Cuarto, se crea el paquete de "exceptions" y las clases que usaron en el service, estas extienden de "RuntimeException" 
 10. Quinto, se crea el paquete de "request", en la cual tiene las clases para crear y editar, para no hacerlo directamente con el modelo. Crear los constructores en los modelos: Clic derecho, Generate, Constructor.
-11. 
+11. Se hizo el services de Category y se completó el Product.
 
 
-QUEDE EN EL MINUTO 44:10!!!, formato: ctrl+alt+L
+QUEDE EN EL MINUTO 1:07:00!!!, formato: ctrl+alt+L
