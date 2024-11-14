@@ -22,7 +22,14 @@
    - Podemos llamar al repository en el service.
 9. Cuarto, se crea el paquete de "exceptions" y las clases que usaron en el service, estas extienden de "RuntimeException" 
 10. Quinto, se crea el paquete de "request", en la cual tiene las clases para crear y editar, para no hacerlo directamente con el modelo. Crear los constructores en los modelos: Clic derecho, Generate, Constructor.
-11. Se hizo el services de Category y se completó el Product.
+11. Se hizo el services de Category con su interface y su repository. Además, se completó el Product.
+12. Se hizo el services de Image con su interface y su repository.
+13. Sexto, para la creación de imagen se creó el nuevo paquete de "dto" y las clases de cada uno
 
 
-QUEDE EN EL MINUTO 1:07:00!!!, formato: ctrl+alt+L
+## Conceptos a repasar
+1. El uso del decorador `@RequiredArgsConstructor` en las clases de service.
+2. ¿Para qué se usa el DTO?
+
+
+QUEDE EN EL MINUTO 1:40:00!!!, Formato: ctrl+alt+L
