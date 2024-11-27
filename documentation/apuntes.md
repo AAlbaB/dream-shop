@@ -21,15 +21,12 @@
 8. Tercero, creamos el paquete de "repository" y las interfaces del repositorio extendiendo de JpaRepository, el modelo que corresponda.
    - Podemos llamar al repository en el service.
 9. Cuarto, se crea el paquete de "exceptions" y las clases que usaron en el service, estas extienden de "RuntimeException" 
-10. Quinto, se crea el paquete de "request", en la cual tiene las clases para crear y editar, para no hacerlo directamente con el modelo. Crear los constructores en los modelos: Clic derecho, Generate, Constructor.
+10. Quinto, se crea el paquete de "request", en la cual tiene las clases para crear y editar, para no hacerlo directamente con el modelo. Generar los constructores en los modelos: Clic derecho, Generate, Constructor.
 11. Se hizo el services de Category con su interface y su repository. Además, se completó el Product.
 12. Se hizo el services de Image con su interface y su repository.
-13. Sexto, para la creación de imagen se creó el nuevo paquete de "dto" y las clases de cada uno
+13. Sexto, para la creación de imagen se creó el nuevo paquete de "dto" y las clases de cada uno.
+14. Séptimo, se crea el paquete "response", con la clase ApiResponse (Se usará para devolver información al frontend).
+15. Octavo, se crea el paquete "controller", inicialmente con las clases: ProductController, ImageController y CategoryController. Estos llaman a la interfaz del servicio de cada entidad correspondiente.
+   - `ResponseEntity:` representa la respuesta HTTP completa: código de estado, cabeceras y cuerpo. Como resultado, podemos utilizarla para configurar completamente la respuesta HTTP.
 
-
-## Conceptos a repasar
-1. El uso del decorador `@RequiredArgsConstructor` en las clases de service.
-2. ¿Para qué se usa el DTO?
-
-
-QUEDE EN EL MINUTO 1:40:00!!!, Formato: ctrl+alt+L
+QUEDE EN EL MINUTO 2:03:00!!!, Formato: ctrl+alt+L
