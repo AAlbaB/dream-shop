@@ -29,4 +29,4 @@
 15. Octavo, se crea el paquete "controller", inicialmente con las clases: ProductController, ImageController y CategoryController. Estos llaman a la interfaz del servicio de cada entidad correspondiente.
    - `ResponseEntity:` representa la respuesta HTTP completa: código de estado, cabeceras y cuerpo. Como resultado, podemos utilizarla para configurar completamente la respuesta HTTP.
 
-QUEDE EN EL MINUTO 2:03:00!!!, Formato: ctrl+alt+L
+QUEDE EN EL MINUTO 2:18:00!!!, Formato: ctrl+alt+L
