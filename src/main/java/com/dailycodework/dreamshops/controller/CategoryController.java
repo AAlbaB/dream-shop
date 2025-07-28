@@ -39,17 +39,17 @@ public class CategoryController {
         }
     }
 
-    @GetMapping("/category/{id}/category")
-    public ResponseEntity<ApiResponse> getCategoryById(@PathVariable Long id) {
+    @GetMapping("/{categoryId}")
+    public ResponseEntity<ApiResponse> getCategoryById(@PathVariable Long categoryId) {
         try {
-            Category theCategory = categoryService.getCategoryById(id);
+            Category theCategory = categoryService.getCategoryById(categoryId);
             return ResponseEntity.ok(new ApiResponse("Found", theCategory));
         } catch (ResourceNotFoundException e) {
             return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
         }
     }
 
-    @GetMapping("/category/{name}/category")
+    @GetMapping("/name/{name}")
     public ResponseEntity<ApiResponse> getCategoryByName(@PathVariable String name) {
         try {
             Category theCategory = categoryService.getCategoryByName(name);
@@ -59,20 +59,20 @@ public class CategoryController {
         }
     }
 
-    @DeleteMapping("/category/{id}/delete")
-    public ResponseEntity<ApiResponse> deleteCategory(@PathVariable Long id) {
+    @DeleteMapping("/{categoryId}/delete")
+    public ResponseEntity<ApiResponse> deleteCategory(@PathVariable Long categoryId) {
         try {
-            categoryService.deleteCategoryById(id);
-            return ResponseEntity.ok(new ApiResponse("Found", null));
+            categoryService.deleteCategoryById(categoryId);
+            return ResponseEntity.ok(new ApiResponse("Delete category success!", null));
         } catch (ResourceNotFoundException e) {
             return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
         }
     }
 
-    @PutMapping("/category/{id}/update")
-    public ResponseEntity<ApiResponse> updateCategory(@PathVariable Long id, @RequestBody Category category) {
+    @PutMapping("/{categoryId}/update")
+    public ResponseEntity<ApiResponse> updateCategory(@PathVariable Long categoryId, @RequestBody Category category) {
         try {
-            Category updatedCategory = categoryService.updateCategory(category, id);
+            Category updatedCategory = categoryService.updateCategory(category, categoryId);
             return ResponseEntity.ok(new ApiResponse("Update success!", updatedCategory));
         } catch (ResourceNotFoundException e) {
             return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));

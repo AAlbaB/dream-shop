@@ -11,6 +11,7 @@
    - Ejecutamos el contenedor de MySQL: `docker run -d -p 3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin --name mysql-container mysql:latest`
    - Se puede probar la conexión (Se usa un gestor de BD como MySQL Workbench)
    - No olvidar crear el esquema en la BD: `dream_shops_db`
+   - Se debe colocar esta propiedad en "create": `spring.jpa.hibernate.ddl-auto=create`, después de ejecutada se coloca en update.
    - Se ejecuta normal la aplicación y debe crear las tablas con sus relaciones en la instancia
 7. Segundo, Se crea el paquete de "service", en donde creo un paquete para cada entidad y después el Service y la interface.
    - En la interface colocamos los métodos que vamos a usar, para obtener info de los productos: Añadir producto, listarlos, etc.
@@ -27,6 +28,9 @@
 13. Sexto, para la creación de imagen se creó el nuevo paquete de "dto" y las clases de cada uno.
 14. Séptimo, se crea el paquete "response", con la clase ApiResponse (Se usará para devolver información al frontend).
 15. Octavo, se crea el paquete "controller", inicialmente con las clases: ProductController, ImageController y CategoryController. Estos llaman a la interfaz del servicio de cada entidad correspondiente.
-   - `ResponseEntity:` representa la respuesta HTTP completa: código de estado, cabeceras y cuerpo. Como resultado, podemos utilizarla para configurar completamente la respuesta HTTP.
+    - `ResponseEntity:` representa la respuesta HTTP completa: código de estado, cabeceras y cuerpo. Como resultado, podemos utilizarla para configurar completamente la respuesta HTTP.
+16. Se creó la clase `GlobalExceptionHandler` en controller.advice, esto hace se hizo con el fin de manejar las excepciones de forma global sin tener que usar try-catch en cada controlador, gracias al decorador de @RestControllerAdvice
 
-QUEDE EN EL MINUTO 2:18:00!!!, Formato: ctrl+alt+L
+
+QUEDÉ EN EL MINUTO 3:35:00!!!, Formato: ctrl+alt+L 
+   TODO: Modificar los endpoints para que ya no tengan el try-catch, ya que se uno el GlobalExceptionHandler para recibir todas las excepciones que se tengan.

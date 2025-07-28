@@ -37,7 +37,7 @@ public class ImageController {
         }
     }
 
-    @GetMapping("/image/download/{imageId}")
+    @GetMapping("/download/{imageId}")
     public ResponseEntity<Resource> downloadImage(@PathVariable Long imageId) throws SQLException {
         Image image = imageService.getImageById(imageId);
         ByteArrayResource resource = new ByteArrayResource(image.getImage().getBytes(1, (int) image.getImage().length()));
@@ -46,27 +46,19 @@ public class ImageController {
                 .body(resource);
     }
 
-    @PutMapping("/image/{imageId}/update")
-    public ResponseEntity<ApiResponse> updateImage(@PathVariable Long imageId, @RequestBody MultipartFile file) {
-        try {
-            Image image = imageService.getImageById(imageId);
-            if (image != null) {
-                imageService.updateImage(file, imageId);
-                return ResponseEntity.ok(new ApiResponse("Update success!", null));
-            }
-        } catch (ResourceNotFoundException e) {
-            return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
-        }
-        return ResponseEntity.status(INTERNAL_SERVER_ERROR).body(new ApiResponse("Update failed!", INTERNAL_SERVER_ERROR));
+    @PutMapping("/{imageId}/update")
+    public ResponseEntity<ApiResponse> updateImage(@PathVariable Long imageId, @RequestParam MultipartFile file) {
+        imageService.updateImage(file, imageId);
+        return ResponseEntity.ok(new ApiResponse("Update success!", null));
     }
 
-    @DeleteMapping("/image/{imageId}/delete")
+    @DeleteMapping("/{imageId}/delete")
     public ResponseEntity<ApiResponse> deleteImage(@PathVariable Long imageId) {
         try {
             Image image = imageService.getImageById(imageId);
             if (image != null) {
                 imageService.deleteImageById(imageId);
-                return ResponseEntity.ok(new ApiResponse("Delete success!", null));
+                return ResponseEntity.ok(new ApiResponse("Delete image success!", null));
             }
         } catch (ResourceNotFoundException e) {
             return ResponseEntity.status(NOT_FOUND).body(new ApiResponse(e.getMessage(), null));
