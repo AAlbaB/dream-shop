@@ -1,5 +1,5 @@
 # Proyecto con Spring
-1. Video guia para este proyecto: [Video](https://www.youtube.com/watch?v=oGhc5Z-WJSw&list=PL12f2ZfD_Eujxj3TJdjDpKFgsZf7CUj3R)
+1. Video guía para este proyecto: [Video](https://www.youtube.com/watch?v=oGhc5Z-WJSw&list=PL12f2ZfD_Eujxj3TJdjDpKFgsZf7CUj3R)
 2. Código base: [Código Github](https://github.com/dailycodework/dream-shops)
 3. Se creó el proyecto en spring initializr con [Spring Initializr](https://start.spring.io/):
     * Maven, Java 17+, Spring Boot 3.3.3, Packing jar
@@ -30,7 +30,7 @@
 15. Octavo, se crea el paquete "controller", inicialmente con las clases: ProductController, ImageController y CategoryController. Estos llaman a la interfaz del servicio de cada entidad correspondiente.
     - `ResponseEntity:` representa la respuesta HTTP completa: código de estado, cabeceras y cuerpo. Como resultado, podemos utilizarla para configurar completamente la respuesta HTTP.
 16. Se creó la clase `GlobalExceptionHandler` en controller.advice, esto hace se hizo con el fin de manejar las excepciones de forma global sin tener que usar try-catch en cada controlador, gracias al decorador de @RestControllerAdvice
+17. se creó los modelos de Cart y CartItem. Después, el service e interface para Cart y CartItem, con sus Repositorios y finalmente los controladores de cada entidad.
 
-
-QUEDÉ EN EL MINUTO 3:35:00!!!, Formato: ctrl+alt+L 
-   TODO: Modificar los endpoints para que ya no tengan el try-catch, ya que se uno el GlobalExceptionHandler para recibir todas las excepciones que se tengan.
+¡QUEDÉ EN EL MINUTO 5:11:00! 
+Formato: ctrl+alt+L 
