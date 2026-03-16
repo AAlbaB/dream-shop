@@ -32,5 +32,8 @@
 16. Se creó la clase `GlobalExceptionHandler` en controller.advice, esto hace se hizo con el fin de manejar las excepciones de forma global sin tener que usar try-catch en cada controlador, gracias al decorador de @RestControllerAdvice
 17. se creó los modelos de Cart y CartItem. Después, el service e interface para Cart y CartItem, con sus Repositorios y finalmente los controladores de cada entidad.
 
-¡QUEDÉ EN EL MINUTO 5:11:00! 
+¡QUEDÉ EN EL MINUTO 7:45:00! 
 Formato: ctrl+alt+L 
+
+TODO: Al momento de crear una orden, se debe borrar el cart y cart items asociados, pero no está borrando el cart. También verificar que se actualicen las cantidades de los productos.
+TODO: Usar DTos, al momento de enviar respuesta de productos y otros.
