@@ -1,5 +1,6 @@
 package com.dailycodework.dreamshops.controller.advice;
 
+import com.dailycodework.dreamshops.exceptions.AlreadyExistsException;
 import com.dailycodework.dreamshops.exceptions.ResourceNotFoundException;
 import com.dailycodework.dreamshops.response.ApiResponse;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ApiResponse> handleResourceNotFound(ResourceNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(ex.getMessage(), null));
+    }
+
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<ApiResponse> handleAlreadyExistsException(AlreadyExistsException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse(ex.getMessage(), null));
     }
 
     @ExceptionHandler(Exception.class)

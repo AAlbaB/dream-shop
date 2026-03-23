@@ -4,7 +4,6 @@ import com.dailycodework.dreamshops.dto.CartDto;
 import com.dailycodework.dreamshops.exceptions.ResourceNotFoundException;
 import com.dailycodework.dreamshops.model.Cart;
 import com.dailycodework.dreamshops.model.User;
-import com.dailycodework.dreamshops.repository.CartItemRepository;
 import com.dailycodework.dreamshops.repository.CartRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -19,7 +18,6 @@ import java.util.Optional;
 public class CartService implements ICartService {
 
     private final CartRepository cartRepository;
-    private final CartItemRepository cartItemRepository;
     private final ModelMapper modelMapper;
 
     @Override
@@ -35,9 +33,9 @@ public class CartService implements ICartService {
     @Override
     public void clearCart(Long id) {
         Cart cart = getCart(id);
-        cartItemRepository.deleteAllByCartId(id);
         cart.getItems().clear();
-        cartRepository.deleteById(id);
+        cart.setTotalAmount(BigDecimal.ZERO);
+        cartRepository.save(cart);
     }
 
     @Override

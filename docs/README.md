@@ -35,5 +35,5 @@
 ¡QUEDÉ EN EL MINUTO 7:45:00! 
 Formato: ctrl+alt+L 
 
-TODO: Al momento de crear una orden, se debe borrar el cart y cart items asociados, pero no está borrando el cart. También verificar que se actualicen las cantidades de los productos.
-TODO: Usar DTos, al momento de enviar respuesta de productos y otros.
+TODO: Usar DTO, al momento de enviar respuesta de productos y otros.
+TODO: Quitar los try catch de los controladores y usar el GlobalExceptionHandler.
