@@ -1,7 +1,5 @@
-package com.dailycodework.dreamshops.controller.advice;
+package com.dailycodework.dreamshops.exceptions;
 
-import com.dailycodework.dreamshops.exceptions.AlreadyExistsException;
-import com.dailycodework.dreamshops.exceptions.ResourceNotFoundException;
 import com.dailycodework.dreamshops.response.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
