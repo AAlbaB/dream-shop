@@ -5,19 +5,22 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.5.11</version>
+        <relativePath/>
     </parent>
 
-    <groupId>com.dailycodework</groupId>
-    <artifactId>dream-shops</artifactId>
+    <groupId>com.spring</groupId>
+    <artifactId>dream-shop</artifactId>
     <version>1.0</version>
-    <name>dream-shops</name>
+    <name>dream-shop</name>
     <description>A simple eCommerce for practicing SpringBoot</description>
 
     <properties>
         <java.version>17</java.version>
         <modelmapper-spring.version>2.4.4</modelmapper-spring.version>
+        <jjwt-api.version>0.12.6</jjwt-api.version>
+        <jjwt-impl.version>0.12.6</jjwt-impl.version>
+        <jjwt-jackson.version>0.12.6</jjwt-jackson.version>
     </properties>
 
     <dependencies>
@@ -25,13 +28,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
         <dependency>
@@ -45,11 +55,33 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt-impl.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt-jackson.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
