@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 @Entity
+@Table(name = "roles")
 @Getter
 @Setter
 @NoArgsConstructor
